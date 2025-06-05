@@ -1,0 +1,51 @@
+{
+    "name": "Dicoding Story App",
+    "short_name": "StoryApp",
+    "description": "Aplikasi untuk berbagi cerita dari Dicoding Story dengan offline support.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#1976d2",
+    "icons": [
+        {
+            "src": "/favicon2.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/favicon1.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Tambah Story Baru",
+            "url": "/#/add-story",
+            "description": "Langsung ke halaman untuk menambah cerita baru",
+            "icons": [
+                {
+                    "src": "/favicon.png",
+                    "sizes": "40x40",
+                    "type": "image/png"
+                }
+            ]
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/screenshots/desktop-screenshot.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "Tampilan Desktop Dicoding Story"
+        },
+        {
+            "src": "/screenshots/mobile-screenshot.png",
+            "sizes": "720x1280",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "Tampilan Mobile Dicoding Story"
+        }
+    ]
+}
