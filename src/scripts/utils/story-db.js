@@ -26,16 +26,15 @@ class StoryDB {
   }
 
   static async saveStories(stories) {
-    // Step 1: Fetch all photos outside of the transaction
     const preparedStories = await Promise.all(
       stories.map(async story => {
-        const storyCopy = { ...story }; // Create a copy to avoid mutating original
+        const storyCopy = { ...story };
         if (storyCopy.photoUrl) {
           try {
             const response = await fetch(storyCopy.photoUrl, { mode: 'cors' });
             if (response.ok) {
               storyCopy.photoBlob = await response.blob();
-              delete storyCopy.photoUrl; // Remove photoUrl after converting to blob
+              delete storyCopy.photoUrl;
               console.log(`Photo fetched for story ${storyCopy.id}`);
             } else {
               console.warn(`Failed to fetch photo for story ${storyCopy.id}: HTTP ${response.status}`);
@@ -48,7 +47,6 @@ class StoryDB {
       })
     );
 
-    // Step 2: Start transaction and save stories
     const db = await this.openDB();
     const tx = db.transaction(STORE_NAME, 'readwrite');
     const store = tx.objectStore(STORE_NAME);
